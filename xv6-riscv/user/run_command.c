@@ -11,16 +11,17 @@ void execute_line(char** args) {
 
   int f = fork();
 
+  // fork() returns a negative integer when it fails
   if (f < 0) {
-    fprintf(2, "fork() failed.");
+    fprintf(2, "fork() failed.\n");
     exit(1);
   }
 
-  if (f == 0) {
+  if (f == 0) { // child process
     exec(args[0], args);
-    fprintf(2, "exec() failed.");
+    fprintf(2, "exec() failed.\n"); // exec() only returns when it fails
     exit(1);
-  } else {
+  } else {      // parent process
     wait(0);
   }
 }
@@ -56,7 +57,7 @@ int main(int argc, char *argv[]) {
 
         b = &buf[0];
         fprintf(2, "Please enter command and press enter (type 'q' to exit):\n");
-    } else if (b < buf + sizeof(buf) - 1) {
+    } else if (b < buf + sizeof(buf) - 1) { // check if input exceeds buffer capacity
         b++;
     }
 }
