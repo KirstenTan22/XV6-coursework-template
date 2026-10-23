@@ -148,6 +148,7 @@ UPROGS=\
 	$U/_sync\
 	$U/_hw\
 	$U/_sleep\
+	$U/_run_command\
 	$U/_uptime\
 	$U/_year\
 

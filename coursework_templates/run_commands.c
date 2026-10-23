@@ -1,6 +1,7 @@
 #include "kernel/types.h"
 #include "kernel/param.h"
 #include "user/user.h"
+#include <ctype.h>
 
 void execute_left_side(char** args, int *p) {
 
