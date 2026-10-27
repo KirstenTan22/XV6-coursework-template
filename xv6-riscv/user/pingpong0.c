@@ -8,6 +8,7 @@ int pid = getpid(f);
 
 pipe(p)
 if (pid > 0) {
+    printf()
     close(p[1])
 } else {
     close(p[0]);
